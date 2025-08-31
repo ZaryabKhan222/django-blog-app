@@ -1,0 +1,45 @@
+# PythonAnywhere Deployment Commands
+# Copy and paste these commands in your PythonAnywhere bash console
+
+# 1. Navigate to your home directory
+cd ~
+
+# 2. Clone your project (if using Git) or upload files manually
+# git clone https://github.com/yourusername/django-blog.git
+# OR upload files via Files tab in PythonAnywhere
+
+# 3. Navigate to your project directory
+cd yourusername.pythonanywhere.com
+
+# 4. Create virtual environment
+python3.10 -m venv venv
+
+# 5. Activate virtual environment
+source venv/bin/activate
+
+# 6. Install requirements
+pip install -r requirements.txt
+
+# 7. Create necessary directories
+mkdir static
+mkdir media
+mkdir templates
+
+# 8. Run migrations
+python manage.py migrate
+
+# 9. Create superuser
+python manage.py createsuperuser
+
+# 10. Collect static files
+python manage.py collectstatic --noinput
+
+# 11. Test the application
+python manage.py check --deploy
+
+# 12. Configure WSGI file (see instructions below)
+# Edit the WSGI file in the Web tab
+
+# 13. Reload your web app
+# Click "Reload" button in the Web tab
+

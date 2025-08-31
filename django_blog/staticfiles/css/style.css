@@ -1,0 +1,60 @@
+/* Custom styles for Django Blog */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.comment {
+    border-left: 3px solid #007bff;
+    padding-left: 15px;
+    margin-left: 10px;
+}
+
+.btn {
+    border-radius: 6px;
+}
+
+.pagination .page-link {
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}

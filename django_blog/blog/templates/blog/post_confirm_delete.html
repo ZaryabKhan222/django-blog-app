@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Post{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h3><i class="fas fa-exclamation-triangle"></i> Confirm Delete</h3>
+            </div>
+            <div class="card-body">
+                <p class="lead">Are you sure you want to delete the post "<strong>{{ post.title }}</strong>"?</p>
+                <p class="text-muted">This action cannot be undone.</p>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Yes, Delete
+                    </button>
+                    <a href="{% url 'blog:post_detail' post.publication_date.year post.publication_date.month post.publication_date.day post.slug %}" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

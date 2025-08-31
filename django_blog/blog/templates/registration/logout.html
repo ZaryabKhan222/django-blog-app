@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Logged Out - Django Blog{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body text-center py-5">
+                <i class="fas fa-sign-out-alt fa-3x text-muted mb-3"></i>
+                <h3>You've been logged out</h3>
+                <p class="text-muted">Thanks for visiting our blog. Come back soon!</p>
+                
+                <div class="mt-4">
+                    <a href="{% url 'blog:post_list' %}" class="btn btn-primary me-2">
+                        <i class="fas fa-home"></i> Browse Posts
+                    </a>
+                    <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-sign-in-alt"></i> Login Again
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
